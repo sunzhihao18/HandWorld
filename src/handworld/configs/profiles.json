@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "shared": {
+    "text_encoder": "Wan2.2-TI2V-5B/models_t5_umt5-xxl-enc-bf16.pth",
+    "vae": "Wan2.2-TI2V-5B/Wan2.2_VAE.pth",
+    "tokenizer": "Wan2.2-TI2V-5B/google/umt5-xxl"
+  },
+  "profiles": {
+    "stage2": {
+      "task": "action_conditioned_video",
+      "observed_rgb_frames": 1,
+      "observed_mano_frames": 49,
+      "observed_action_frames": 49,
+      "frames": 49,
+      "height": 480,
+      "width": 832,
+      "steps": 50,
+      "cfg_scale": 5.0,
+      "seed": 0,
+      "fps": 8,
+      "checkpoint": "stage2.safetensors"
+    },
+    "stage3": {
+      "task": "joint_video_action_forecasting",
+      "observed_rgb_frames": 13,
+      "observed_mano_frames": 13,
+      "observed_action_frames": 13,
+      "frames": 49,
+      "height": 480,
+      "width": 832,
+      "steps": 50,
+      "cfg_scale": 1.0,
+      "seed": 0,
+      "fps": 8,
+      "checkpoint": "stage3.safetensors"
+    }
+  }
+}

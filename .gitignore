@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.cache/
+outputs/
+.env
+.env.*
+*.log
+weights/*
+!weights/.gitkeep
+data/
